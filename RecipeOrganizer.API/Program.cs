@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 // Minimal registrations to allow the project to compile until the extension is available.
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddScoped<IHealthService, HealthService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 
 // Build application
