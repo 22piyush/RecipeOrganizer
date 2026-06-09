@@ -9,7 +9,7 @@ namespace RecipeOrganizer.Infrastructure.Query
 {
     public class AuthQueryGenerator
     {
-        public string GetUserByEmail(string email)
+        public string GetUserByEmailQuery(string email)
         {
             StringBuilder query = new StringBuilder();
 
@@ -20,29 +20,29 @@ namespace RecipeOrganizer.Infrastructure.Query
             return query.ToString();
         }
 
-        public string GetUserByUserName(string userName)
+        public string GetUserByUserNameQuery(string userName)
         {
             StringBuilder query = new StringBuilder();
 
             query.Append("SELECT COUNT(*) ");
             query.Append("FROM Users ");
-            query.AppendFormat("WHERE UserName = '{0}'", userName);
+            query.AppendFormat("WHERE and UserName = '{0}'", userName);
 
             return query.ToString();
         }
 
-        public string GetRoleIdByName(string roleName)
+        public string GetRoleIdByNameQuery(string roleName)
         {
             StringBuilder query = new StringBuilder();
 
             query.Append("SELECT Id ");
             query.Append("FROM Roles ");
-            query.AppendFormat("WHERE Name = '{0}'", roleName);
+            query.AppendFormat("WHERE IsActive = 1 and Name = '{0}'", roleName);
 
             return query.ToString();
         }
 
-        public string InsertUser(User user)
+        public string InsertUserQuery(User user)
         {
             StringBuilder query = new StringBuilder();
 
@@ -77,7 +77,7 @@ namespace RecipeOrganizer.Infrastructure.Query
             return query.ToString();
         }
 
-        public string AssignRole(string userId, string roleId)
+        public string AssignRoleQuery(string userId, string roleId)
         {
             StringBuilder query = new StringBuilder();
 

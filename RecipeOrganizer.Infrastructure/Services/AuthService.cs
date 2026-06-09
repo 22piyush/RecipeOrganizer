@@ -10,14 +10,12 @@ namespace RecipeOrganizer.Infrastructure.Services;
 public class AuthService : IAuthService
 {
     private readonly IConfiguration _configuration;
-    private readonly SQLHelper _sqlHelper;
-    private readonly AuthQueryGenerator _queryGenerator;
+    private readonly string _connectionString;
 
     public AuthService( IConfiguration configuration)
     {
         _configuration = configuration;
-        _sqlHelper = new SQLHelper();
-        _queryGenerator = new AuthQueryGenerator();
+        _connectionString = _configuration.GetConnectionString("RecipeOrganizerDB");
     }
 
     public async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
@@ -25,15 +23,12 @@ public class AuthService : IAuthService
         RegisterResponse response = new RegisterResponse();
 
         SQLHelper sqlHelper = new SQLHelper();
-
         AuthQueryGenerator queryGenerator = new AuthQueryGenerator();
 
-        string connectionString = _configuration.GetConnectionString("RecipeOrganizerDB");
         try
         {
-            string emailQuery = queryGenerator.GetUserByEmail(request.Email);
-
-            int emailCount = sqlHelper.ExecuteScalar(emailQuery, connectionString);
+            string emailQuery = queryGenerator.GetUserByEmailQuery(request.Email);
+            int emailCount = sqlHelper.ExecuteScalar(emailQuery, _connectionString);
 
             if (emailCount > 0)
             {
@@ -42,9 +37,8 @@ public class AuthService : IAuthService
                 return response;
             }
 
-            string userNameQuery = queryGenerator.GetUserByUserName(request.UserName);
-
-            int userCount = sqlHelper.ExecuteScalar(userNameQuery, connectionString);
+            string userNameQuery = queryGenerator.GetUserByUserNameQuery(request.UserName);
+            int userCount = sqlHelper.ExecuteScalar(userNameQuery, _connectionString);
 
             if (userCount > 0)
             {
@@ -53,39 +47,11 @@ public class AuthService : IAuthService
                 return response;
             }
 
-            User user = new User();
+            User user = MapToUser(request);
 
-            user.Id = Guid.NewGuid().ToString();
+            string insertUserQuery = queryGenerator.InsertUserQuery(user);
 
-            user.FirstName = request.FirstName;
-
-            user.LastName = request.LastName;
-
-            user.UserName = request.UserName;
-
-            user.Email = request.Email;
-
-            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
-
-            string insertUserQuery = queryGenerator.InsertUser(user);
-
-            sqlHelper.ExecuteNonQuery(insertUserQuery, connectionString);
-
-            string roleQuery = queryGenerator.GetRoleIdByName("User");
-
-            string roleId = string.Empty;
-
-            using (MySqlDataReader reader = sqlHelper.ExecuteQuery(roleQuery, connectionString))
-            {
-                while (reader.Read())
-                {
-                    roleId = SQLHelper.GetStringValue(reader, "Id");
-                }
-            }
-
-            string roleAssignQuery = queryGenerator.AssignRole(user.Id, roleId);
-
-            sqlHelper.ExecuteNonQuery(roleAssignQuery, connectionString);
+            AssignUserRole(user.Id, "User", sqlHelper);
 
             response.UserId = user.Id;
             response.ResponseCode = 200;
@@ -94,7 +60,7 @@ public class AuthService : IAuthService
         catch (Exception ex)
         {
             response.ResponseCode = 500;
-            response.ResponseMessage = ex.Message;
+            response.ResponseMessage = "Internal Server Error";
         }
         finally
         {
@@ -102,5 +68,41 @@ public class AuthService : IAuthService
         }
 
         return response;
+    }
+    private User MapToUser(RegisterRequest request)
+    {
+        return new User
+        {
+            Id = Guid.NewGuid().ToString(),
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            UserName = request.UserName,
+            Email = request.Email,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password)
+        };
+    }
+    private void AssignUserRole(string userId, string roleName, SQLHelper sqlHelper)
+    {
+        string roleId = string.Empty;
+        if (string.IsNullOrEmpty(userId))
+            return;
+        AuthQueryGenerator queryGenerator = new AuthQueryGenerator();
+
+        string roleQuery = queryGenerator.GetRoleIdByNameQuery(roleName);
+
+        using (MySqlDataReader reader = sqlHelper.ExecuteQuery(roleQuery, _connectionString))
+        {
+            if (reader.Read())
+            {
+                roleId = SQLHelper.GetStringValue(reader, "Id");
+            }
+        }
+
+        if (!string.IsNullOrEmpty(roleId))
+        {
+            string roleAssignQuery = queryGenerator.AssignRoleQuery(userId, roleId);
+
+            sqlHelper.ExecuteNonQuery(roleAssignQuery, _connectionString);
+        }
     }
 }
