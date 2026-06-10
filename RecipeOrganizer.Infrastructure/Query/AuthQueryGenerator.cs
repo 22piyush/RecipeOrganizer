@@ -26,7 +26,7 @@ namespace RecipeOrganizer.Infrastructure.Query
 
             query.Append("SELECT COUNT(*) ");
             query.Append("FROM Users ");
-            query.AppendFormat("WHERE and UserName = '{0}'", userName);
+            query.AppendFormat("WHERE UserName = '{0}'", userName);
 
             return query.ToString();
         }
@@ -86,6 +86,34 @@ namespace RecipeOrganizer.Infrastructure.Query
             query.AppendFormat("VALUES ('{0}','{1}')",
                 userId,
                 roleId);
+
+            return query.ToString();
+        }
+
+        public string GetUserForLogin(string userNameOrEmail)
+        {
+            StringBuilder query = new();
+
+            query.Append("SELECT ");
+            query.Append("u.Id, ");
+            query.Append("u.FirstName, ");
+            query.Append("u.LastName, ");
+            query.Append("u.UserName, ");
+            query.Append("u.Email, ");
+            query.Append("u.PasswordHash, ");
+            query.Append("r.Name AS Role ");
+
+            query.Append("FROM Users u ");
+
+            query.Append("INNER JOIN UserRoles ur ");
+            query.Append("ON u.Id = ur.UserId ");
+
+            query.Append("INNER JOIN Roles r ");
+            query.Append("ON ur.RoleId = r.Id ");
+
+            query.AppendFormat(
+                "WHERE u.IsActive = 1 and ( u.Email = '{0}' OR u.UserName = '{0}')",
+                userNameOrEmail);
 
             return query.ToString();
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RecipeOrganizer.Domain.Entity;
 using RecipeOrganizer.Domain.Services;
 
@@ -44,14 +45,62 @@ namespace RecipeOrganizer.API.Controllers
             if (request == null)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(request.FirstName) || 
-                string.IsNullOrWhiteSpace(request.LastName) || 
+            if (string.IsNullOrWhiteSpace(request.FirstName) ||
+                string.IsNullOrWhiteSpace(request.LastName) ||
                 string.IsNullOrWhiteSpace(request.UserName) ||
                 string.IsNullOrWhiteSpace(request.Email) ||
                 string.IsNullOrWhiteSpace(request.Password))
                 return false;
 
             return true;
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            try
+            {
+                if (!ValidateLoginRequest(request, out List<string> errors))
+                {
+                    return BadRequest(new
+                    {
+                        Success = false,
+                        Errors = errors
+                    });
+                }
+
+                LoginResponse response = await _authService.LoginAsync(request);
+
+                return StatusCode(response.ResponseCode, response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        private bool ValidateLoginRequest(LoginRequest request, out List<string> errors)
+        {
+            errors = new();
+
+            if (request == null)
+            {
+                errors.Add("Request cannot be null.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(request.UserNameOrEmail) || string.IsNullOrWhiteSpace(request.Password))
+                errors.Add("All Fields are required.");
+
+            return !errors.Any();
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("Profile")]
+        public IActionResult Profile()
+        {
+            return Ok("Authorized User");
         }
     }
 }

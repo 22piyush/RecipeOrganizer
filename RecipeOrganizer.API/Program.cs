@@ -1,51 +1,63 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using RecipeOrganizer.Domain.Services;
 using RecipeOrganizer.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add controller support
+// Controllers
 builder.Services.AddControllers();
 
-// Add Swagger services -> Swagger helps to test APIs from browser UI
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register basic services (Infrastructure extension missing)
-// If AddInfrastructure extension method is available in your Infrastructure project,
-// restore the using/assembly reference and replace the lines below with the call.
-// Minimal registrations to allow the project to compile until the extension is available.
+// Dependency Injection
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddScoped<IHealthService, HealthService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+// JWT Authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
 
-// Build application
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(
+                    builder.Configuration["Jwt:Key"]!))
+        };
+    });
+
+// Authorization
+builder.Services.AddAuthorization();
+
+// Build Application
 var app = builder.Build();
 
-// Enable Swagger only in Development mode
-// URL: https://localhost:xxxx/swagger
+// Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-
     app.UseSwaggerUI();
 }
 
-
-// Redirect HTTP to HTTPS
+// Middleware Pipeline
 app.UseHttpsRedirection();
 
-// Enable Authentication middleware
-// Checks JWT token before accessing secure APIs
 app.UseAuthentication();
 
-// Enable Authorization middleware
-// Checks user roles/permissions
 app.UseAuthorization();
 
-// Map controller routes
-// Connects controller APIs to application
 app.MapControllers();
 
-// Run application
 app.Run();
