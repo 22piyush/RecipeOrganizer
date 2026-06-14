@@ -469,6 +469,103 @@ public class AuthService : IAuthService
         }
         return response;
     }
+
+    public async Task<BaseResponse> ChangePasswordAsync(string userName, ChangePasswordRequest request)
+    {
+        BaseResponse response = ValidateChangePasswordRequest(request);
+
+        if (response.ResponseCode != 200)
+        {
+            return response;
+        }
+        SQLHelper sqlHelper = new SQLHelper();
+        AuthQueryGenerator queryGenerator = new AuthQueryGenerator();
+
+        try
+        {
+            string query = queryGenerator.GetUserPasswordQuery(userName);
+
+            string existingPasswordHash = string.Empty;
+
+            using (MySqlDataReader reader = sqlHelper.ExecuteQuery(query,_connectionString))
+            {
+                if (reader.Read())
+                {
+                    existingPasswordHash = SQLHelper.GetStringValue(reader,"PasswordHash");
+                }
+            }
+
+            if (string.IsNullOrEmpty(existingPasswordHash))
+            {
+                response.ResponseCode = 404;
+                response.ResponseMessage = "User not found.";
+
+                return response;
+            }
+
+            bool isValidPassword = BCrypt.Net.BCrypt.Verify(request.CurrentPassword, existingPasswordHash);
+
+            if (!isValidPassword)
+            {
+                response.ResponseCode = 401;
+                response.ResponseMessage = "Current password is incorrect.";
+
+                return response;
+            }
+
+            string newPasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+
+            string updateQuery = queryGenerator.UpdatePasswordQuery(userName, newPasswordHash);
+
+            int rowsAffected = SQLHelper.ExecuteNonQuery(updateQuery, _connectionString);
+
+            response.ResponseCode = rowsAffected > 0 ? 200 : 500;
+            response.ResponseMessage = rowsAffected > 0 ? "Password changed successfully." : "Failed to update password.";
+            response.RecordCount = rowsAffected;
+        }
+        catch (Exception ex)
+        {
+            response.ResponseCode = 500;
+            response.ResponseMessage = "Internal Server Error";
+        }
+        finally
+        {
+            sqlHelper.CloseSqlConnection();
+        }
+        return response;
+    }
+    private BaseResponse ValidateChangePasswordRequest(ChangePasswordRequest request)
+    {
+        BaseResponse response = new();
+
+        if (request == null)
+        {
+            response.ResponseCode = 400;
+            response.ResponseMessage = "Request is required.";
+            return response;
+        }
+
+        if (string.IsNullOrWhiteSpace(request.CurrentPassword) || string.IsNullOrWhiteSpace(request.NewPassword))
+        {
+            response.ResponseCode = 400;
+            response.ResponseMessage = "All Fields are required.";
+
+            return response;
+        }
+
+        if (request.NewPassword != request.ConfirmPassword)
+        {
+            response.ResponseCode = 400;
+            response.ResponseMessage = "Passwords do not match.";
+
+            return response;
+        }
+
+        response.ResponseCode = 200;
+
+        return response;
+    }
+
 }
 
 

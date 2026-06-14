@@ -221,5 +221,27 @@ namespace RecipeOrganizer.Infrastructure.Query
             query.AppendFormat("WHERE Name = '{0}'", roleName);
             return query.ToString();
         }
+
+        public string GetUserPasswordQuery(string userName)
+        {
+            StringBuilder query = new();
+
+            query.Append("SELECT PasswordHash FROM Users ");
+
+            query.AppendFormat("WHERE UserName = '{0}' AND IsActive = 1", userName);
+
+            return query.ToString();
+        }
+        public string UpdatePasswordQuery(string userName, string passwordHash)
+        {
+            StringBuilder query = new();
+
+            query.Append("UPDATE Users ");
+            query.AppendFormat("SET PasswordHash = '{0}' ", passwordHash);
+
+            query.AppendFormat("WHERE UserName = '{0}'", userName);
+
+            return query.ToString();
+        }
     }
 }

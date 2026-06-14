@@ -176,5 +176,18 @@ namespace RecipeOrganizer.API.Controllers
 
             return StatusCode( response.ResponseCode, response);
         }
+
+        [Authorize]
+        [HttpPost]
+        [Route("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+        {
+            string userName = User.FindFirst("userName")?.Value ?? string.Empty;
+
+            BaseResponse response = await _authService.ChangePasswordAsync(userName, request);
+
+            return StatusCode(response.ResponseCode, response);
+        }
+
     }
 }
