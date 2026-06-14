@@ -33,7 +33,7 @@ public class AuthService : IAuthService
 
         try
         {
-            string emailQuery = queryGenerator.GetUserByEmailQuery(request.Email);
+            string emailQuery = queryGenerator.GetUserQuery(email: request.Email);
             int emailCount = sqlHelper.ExecuteScalar(emailQuery, _connectionString);
 
             if (emailCount > 0)
@@ -43,7 +43,7 @@ public class AuthService : IAuthService
                 return response;
             }
 
-            string userNameQuery = queryGenerator.GetUserByUserNameQuery(request.UserName);
+            string userNameQuery = queryGenerator.GetUserQuery(userName: request.UserName);
             int userCount = sqlHelper.ExecuteScalar(userNameQuery, _connectionString);
 
             if (userCount > 0)
@@ -517,7 +517,7 @@ public class AuthService : IAuthService
 
             string updateQuery = queryGenerator.UpdatePasswordQuery(userName, newPasswordHash);
 
-            int rowsAffected = SQLHelper.ExecuteNonQuery(updateQuery, _connectionString);
+            int rowsAffected = sqlHelper.ExecuteNonQuery(updateQuery, _connectionString);
 
             response.ResponseCode = rowsAffected > 0 ? 200 : 500;
             response.ResponseMessage = rowsAffected > 0 ? "Password changed successfully." : "Failed to update password.";
@@ -565,6 +565,61 @@ public class AuthService : IAuthService
 
         return response;
     }
+
+    //public async Task<BaseResponse> UpdateProfileAsync(string userId, UpdateProfileRequest request)
+    //{
+    //    BaseResponse response = new BaseResponse();
+
+    //    if (request == null || userId == null)
+    //    {
+    //        response.ResponseCode = 400;
+    //        response.ResponseMessage = "Invalid request.";
+    //        return response;
+    //    }
+    //    SQLHelper sqlHelper = new SQLHelper();
+    //    AuthQueryGenerator queryGenerator = new AuthQueryGenerator();
+
+    //    try
+    //    {
+
+    //        int userNameCount = sqlHelper.ExecuteScalar(queryGenerator.GetUserQuery(userName: request.UserName, userId: userId), _connectionString);
+
+    //        if (userNameCount > 0)
+    //        {
+    //            response.ResponseCode = 409;
+    //            response.ResponseMessage = "Username already exists.";
+
+    //            return response;
+    //        }
+
+    //        int rowsAffected = _sqlHelper.ExecuteNonQuery(_queryGenerator.UpdateProfileQuery(
+    //                    userId,
+    //                    request),
+    //                _connectionString);
+
+    //        response.ResponseCode =
+    //            rowsAffected > 0 ? 200 : 500;
+
+    //        response.ResponseMessage =
+    //            rowsAffected > 0
+    //                ? "Profile updated successfully."
+    //                : "Failed to update profile.";
+
+    //        response.RecordCount =
+    //            rowsAffected;
+
+    //        return response;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        response.ResponseCode = 500;
+    //        response.ResponseMessage =
+    //            ex.Message;
+
+    //        return response;
+    //    }
+    //}
+
 
 }
 

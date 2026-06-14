@@ -9,24 +9,21 @@ namespace RecipeOrganizer.Infrastructure.Query
 {
     public class AuthQueryGenerator
     {
-        public string GetUserByEmailQuery(string email)
+        public string GetUserQuery(string email= "", string userName = "", string userId = "")
         {
             StringBuilder query = new StringBuilder();
 
             query.Append("SELECT COUNT(*) ");
             query.Append("FROM Users ");
-            query.AppendFormat("WHERE Email = '{0}'", email);
+            query.Append("WHERE IsActive = 1 ");
+            if (!string.IsNullOrEmpty(email))
+                query.AppendFormat("AND Email = '{0}' ", email);
 
-            return query.ToString();
-        }
+            if (!string.IsNullOrEmpty(userName))
+                query.AppendFormat("AND UserName = '{0}' ", userName);
 
-        public string GetUserByUserNameQuery(string userName)
-        {
-            StringBuilder query = new StringBuilder();
-
-            query.Append("SELECT COUNT(*) ");
-            query.Append("FROM Users ");
-            query.AppendFormat("WHERE UserName = '{0}'", userName);
+            if (!string.IsNullOrEmpty(userId))
+                query.AppendFormat("AND EntityId <> '{0}' ", userId);
 
             return query.ToString();
         }
@@ -177,7 +174,7 @@ namespace RecipeOrganizer.Infrastructure.Query
             query.AppendFormat("WHERE u.UserName IN ({0}) and u.IsActive = 1 ", users);
 
             query.Append("GROUP BY ");
-            query.Append("u.Id, u.EntityId ");
+            query.Append("u.Id, u.EntityId, ");
             query.Append("u.FirstName, ");
             query.Append("u.LastName, ");
             query.Append("u.UserName, ");
@@ -240,6 +237,33 @@ namespace RecipeOrganizer.Infrastructure.Query
             query.AppendFormat("SET PasswordHash = '{0}' ", passwordHash);
 
             query.AppendFormat("WHERE UserName = '{0}'", userName);
+
+            return query.ToString();
+        }
+
+        public string UpdateProfileQuery(string userId, UpdateProfileRequest request)
+        {
+            StringBuilder query = new();
+
+            query.Append("UPDATE Users SET ");
+
+            query.AppendFormat( "FirstName = '{0}', ", request.FirstName);
+
+            query.AppendFormat(
+                "LastName = '{0}', ",
+                request.LastName);
+
+            query.AppendFormat(
+                "Email = '{0}', ",
+                request.Email);
+
+            query.AppendFormat(
+                "UserName = '{0}' ",
+                request.UserName);
+
+            query.AppendFormat(
+                "WHERE Id = '{0}'",
+                userId);
 
             return query.ToString();
         }

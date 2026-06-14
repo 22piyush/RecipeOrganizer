@@ -18,5 +18,6 @@ namespace RecipeOrganizer.Domain.Services
         Task<BaseResponse> CreateRolesAsync(CreateRoleRequest request, string createdBy);
         Task<BaseResponse> RemoveRoleAsync(string roleName);
         Task<BaseResponse> ChangePasswordAsync(string userName, ChangePasswordRequest request);
+        //Task<BaseResponse> UpdateProfileAsync( string userId, UpdateProfileRequest request);
     }
 }

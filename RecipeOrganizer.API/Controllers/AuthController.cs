@@ -73,6 +73,21 @@ namespace RecipeOrganizer.API.Controllers
 
                 LoginResponse response = await _authService.LoginAsync(request);
 
+                if (response.ResponseCode == 200)
+                {
+                    Response.Cookies.Append("access_token", response.Token,
+                        new CookieOptions
+                        {
+                            HttpOnly = true,
+                            Secure = true,
+                            SameSite = SameSiteMode.Strict,
+                            Expires = DateTime.UtcNow.AddHours(8)
+                        });
+
+                    response.Token = string.Empty;
+                }
+
+
                 return StatusCode(response.ResponseCode, response);
             }
             catch (Exception ex)
@@ -94,6 +109,20 @@ namespace RecipeOrganizer.API.Controllers
                 errors.Add("All Fields are required.");
 
             return !errors.Any();
+        }
+
+        [Authorize]
+        [HttpPost]
+        [Route("logout")]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("access_token");
+
+            return Ok(new BaseResponse
+            {
+                ResponseCode = 200,
+                ResponseMessage ="Logged out successfully."
+            });
         }
 
         [Authorize]
@@ -188,6 +217,18 @@ namespace RecipeOrganizer.API.Controllers
 
             return StatusCode(response.ResponseCode, response);
         }
+
+        //[Authorize]
+        //[HttpPut]
+        //[Route("profile")]
+        //public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileRequest request)
+        //{
+        //    string userId = User.FindFirst(JwtRegisteredClaimNames.Sub)?.Value ?? string.Empty;
+
+        //    BaseResponse response = await _authService.UpdateProfileAsync( userId, request);
+
+        //    return StatusCode(response.ResponseCode, response);
+        //}
 
     }
 }
