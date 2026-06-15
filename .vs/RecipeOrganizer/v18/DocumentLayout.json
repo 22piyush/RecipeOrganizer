@@ -1,0 +1,332 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|solutionrelative:recipeorganizer.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.infrastructure\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|solutionrelative:recipeorganizer.infrastructure\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.infrastructure\\query\\authquerygenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|solutionrelative:recipeorganizer.infrastructure\\query\\authquerygenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|solutionrelative:recipeorganizer.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\updateprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\updateprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\changepasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\changepasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\userprofileresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\userprofileresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\assignrolerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\assignrolerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\entity\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\entity\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.domain\\services\\ihealthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C939C6FC-27E3-4FA5-8639-C5652DC5F1A7}|RecipeOrganizer.Domain\\RecipeOrganizer.Domain.csproj|solutionrelative:recipeorganizer.domain\\services\\ihealthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.infrastructure\\query\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|solutionrelative:recipeorganizer.infrastructure\\query\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.infrastructure\\recipeorganizer.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|solutionrelative:recipeorganizer.infrastructure\\recipeorganizer.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|solutionrelative:recipeorganizer.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.api\\controllers\\healthcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44EFEEFC-3912-40D2-8466-DC800C6A96AD}|RecipeOrganizer.API\\RecipeOrganizer.API.csproj|solutionrelative:recipeorganizer.api\\controllers\\healthcheckcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|c:\\users\\hp\\desktop\\recipeorganizer\\recipeorganizer.infrastructure\\services\\healthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556A642-85DB-4FCF-A824-BA86D9F8A5EF}|RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj|solutionrelative:recipeorganizer.infrastructure\\services\\healthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Services\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Services\\IAuthService.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T18:16:40.307Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "RecipeOrganizer.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAowIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T17:22:16.048Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Infrastructure\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Services\\AuthService.cs",
+              "RelativeToolTip": "RecipeOrganizer.Infrastructure\\Services\\AuthService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAIA0wKsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T17:24:41.703Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthQueryGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Query\\AuthQueryGenerator.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Infrastructure\\Query\\AuthQueryGenerator.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Query\\AuthQueryGenerator.cs",
+              "RelativeToolTip": "RecipeOrganizer.Infrastructure\\Query\\AuthQueryGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T17:25:19.521Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateProfileRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\UpdateProfileRequest.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\UpdateProfileRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\UpdateProfileRequest.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\UpdateProfileRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T17:34:40.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ChangePasswordRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\ChangePasswordRequest.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\ChangePasswordRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\ChangePasswordRequest.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\ChangePasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T17:22:53.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\Program.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.API\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\Program.cs",
+              "RelativeToolTip": "RecipeOrganizer.API\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T17:31:22.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\LoginRequest.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T17:29:27.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\RegisterRequest.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T18:14:29.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserProfileResponse.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\UserProfileResponse.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\UserProfileResponse.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\UserProfileResponse.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\UserProfileResponse.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAASwA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T17:46:47.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AssignRoleRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\AssignRoleRequest.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\AssignRoleRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\AssignRoleRequest.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\AssignRoleRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T18:29:29.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseResponse.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\BaseResponse.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\BaseResponse.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\BaseResponse.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\BaseResponse.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAewBwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T18:28:16.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterResponse.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\RegisterResponse.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Entity\\RegisterResponse.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Entity\\RegisterResponse.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Entity\\RegisterResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T18:15:42.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SQLHelper.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Query\\SQLHelper.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Infrastructure\\Query\\SQLHelper.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Query\\SQLHelper.cs",
+              "RelativeToolTip": "RecipeOrganizer.Infrastructure\\Query\\SQLHelper.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAMwEkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T18:37:52.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IHealthService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Services\\IHealthService.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Domain\\Services\\IHealthService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Domain\\Services\\IHealthService.cs",
+              "RelativeToolTip": "RecipeOrganizer.Domain\\Services\\IHealthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T17:22:45.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RecipeOrganizer.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj",
+              "RelativeToolTip": "RecipeOrganizer.Infrastructure\\RecipeOrganizer.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-10T17:42:48.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "RecipeOrganizer.API\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\appsettings.Development.json",
+              "RelativeToolTip": "RecipeOrganizer.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-24T18:38:52.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HealthCheckController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\Controllers\\HealthCheckController.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.API\\Controllers\\HealthCheckController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.API\\Controllers\\HealthCheckController.cs",
+              "RelativeToolTip": "RecipeOrganizer.API\\Controllers\\HealthCheckController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwDIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T18:43:44.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HealthService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Services\\HealthService.cs",
+              "RelativeDocumentMoniker": "RecipeOrganizer.Infrastructure\\Services\\HealthService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\RecipeOrganizer\\RecipeOrganizer.Infrastructure\\Services\\HealthService.cs",
+              "RelativeToolTip": "RecipeOrganizer.Infrastructure\\Services\\HealthService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T17:23:14.062Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

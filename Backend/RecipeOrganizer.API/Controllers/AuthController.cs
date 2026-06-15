@@ -127,6 +127,21 @@ namespace RecipeOrganizer.API.Controllers
 
         [Authorize]
         [HttpGet]
+        [Route("get_access_token")]
+        public async Task<IActionResult> getAccessToken()
+        {
+            string userName = User.FindFirst("userName")?.Value ?? string.Empty;
+
+            if(string.IsNullOrWhiteSpace(userName))
+            {
+                return BadRequest();
+            }
+
+            return StatusCode(200, "Token Present");
+        }
+
+        [Authorize]
+        [HttpGet]
         [Route("Profile")]
         public async Task<IActionResult> Profile()
         {
