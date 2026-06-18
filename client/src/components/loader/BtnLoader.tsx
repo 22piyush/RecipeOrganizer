@@ -1,8 +1,8 @@
 import { TbLoader } from "react-icons/tb";
 
-function BtnLoader() {
+function BtnLoader({loading}) {
   return (
-    <TbLoader className="w-4 h-4 mt-0.5 animate-spin" />
+    loading && <TbLoader className="w-4 h-4 mt-0.5 animate-spin" />
   )
 }
 
