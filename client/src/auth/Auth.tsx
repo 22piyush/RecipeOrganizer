@@ -5,7 +5,6 @@ import banner from "../assets/banner_image.jpg";
 import BtnLoader from "../components/loader/BtnLoader";
 import { apiRequest } from "../services/Api";
 import { useNavigate } from "react-router-dom";
-
 import "./Auth.css";
 
 export default function Auth() {
@@ -34,6 +33,7 @@ export default function Auth() {
   });
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
     setLoginForm({
       ...loginForm,
       [e.target.name]: e.target.value,
@@ -58,7 +58,10 @@ export default function Auth() {
     try {
       const response = await apiRequest("/Auth/get_access_token", "GET");
       console.log(response);
-      setIsLoading(false);
+      navigate("/home");
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
       setBtnLoading(false);
     } catch (error) {
       console.error(error);
@@ -68,6 +71,9 @@ export default function Auth() {
   };
 
   const loginUser = async () => {
+
+    
+
     setBtnLoading(true);
 
     try {
@@ -97,6 +103,7 @@ export default function Auth() {
       const response = await apiRequest("/Auth/Register", "POST", param);
       if(response.responseCode == 200){
         alert(response.responseMessage);
+        setActiveForm("login")
       }else{
         alert(response.responseMessage);
       }

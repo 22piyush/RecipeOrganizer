@@ -12,9 +12,9 @@ function App() {
     try {
       const response = await apiRequest("/Auth/get_access_token", "GET");
       console.log(response);
+      navigate("/home", { replace: true });
     } catch (error) {
       console.error(error);
-
       navigate("/auth", { replace: true });
     } finally {
       setIsLoading(false);
@@ -32,7 +32,7 @@ function App() {
           <TbLoader2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 text-blue-600 animate-spin" />
         </div>
       )}
-      {!isLoading && <>home <Outlet /></>}
+      {!isLoading && <><Outlet /></>}
     </>
   );
 }
